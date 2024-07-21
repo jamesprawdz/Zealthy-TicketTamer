@@ -1,7 +1,7 @@
 const { verifyToken } = require('../utils/jwtUtil');
 const logDetails = require('../utils/logUtil');
 
-const authenticate = async (req, res, next) => {
+const authenticate = (req, res, next) => {
   logDetails("Starting authentication middleware...");
   const authHeader = req.header('Authorization');
   if (!authHeader) {
@@ -11,7 +11,7 @@ const authenticate = async (req, res, next) => {
 
   const token = authHeader.replace('Bearer ', '');
   try {
-    const decoded = await verifyToken(token, process.env.JWT_SECRET);
+    const decoded = verifyToken(token, process.env.JWT_SECRET);
     req.user = decoded;
     logDetails("Token verified", decoded);
     next();
