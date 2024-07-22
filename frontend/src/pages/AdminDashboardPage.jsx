@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getAllTickets } from '../utils/api';
-import TicketList from '../components/TicketList';
-import logDetails from '../utils/logUtil';
+import React, { useEffect, useState } from "react";
+import { getAllTickets } from "../utils/api";
+import TicketList from "../components/TicketList";
+import logDetails from "../utils/logUtil";
 
 const AdminDashboardPage = () => {
   const [tickets, setTickets] = useState([]);
@@ -11,9 +11,9 @@ const AdminDashboardPage = () => {
       try {
         const response = await getAllTickets();
         setTickets(response);
-        logDetails('Fetched all tickets', response);
+        logDetails("Fetched all tickets", response);
       } catch (error) {
-        logDetails('Failed to fetch tickets', error);
+        logDetails("Failed to fetch tickets", error);
       }
     };
     fetchTickets();

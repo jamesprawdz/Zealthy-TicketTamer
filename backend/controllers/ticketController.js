@@ -5,10 +5,10 @@ const logDetails = require('../utils/logUtil');
 const createTicket = async (req, res) => {
   logDetails("Starting createTicket function...");
   try {
-    const { name, email, description, priority } = req.body;
+    const { name, email, description } = req.body;
     logDetails("Received data", req.body);
 
-    const newTicket = await Ticket.create({ name, email, description, priority });
+    const newTicket = await Ticket.create({ name, email, description });
     logDetails("New ticket created", newTicket.toJSON());
 
     const emailContent = `
@@ -18,7 +18,6 @@ const createTicket = async (req, res) => {
 
       - Description: ${newTicket.description}
       - Status: ${newTicket.status}
-      - Priority: ${newTicket.priority}
 
       Our support team will review your ticket and get back to you as soon as possible.
       
@@ -95,8 +94,8 @@ const updateTicket = async (req, res) => {
   logDetails("Starting updateTicket function...");
   try {
     const { id } = req.params;
-    const { status, response, comments } = req.body;
-    logDetails("Received data", { id, status, response, comments });
+    const { status, response, comments, priority } = req.body;
+    logDetails("Received data", { id, status, response, comments, priority });
 
     const ticket = await Ticket.findByPk(id);
     if (!ticket) {
@@ -122,6 +121,9 @@ const updateTicket = async (req, res) => {
     } else if (response) {
       ticket.response = response;
       ticket.status = getStatusForResponse(response);
+    }
+    if (priority) {
+      ticket.priority = priority;
     }
     ticket.comments = comments;
 
