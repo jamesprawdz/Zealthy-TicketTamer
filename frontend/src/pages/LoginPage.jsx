@@ -21,16 +21,16 @@ const LoginPage = ({ setIsAuthenticated }) => {
       const response = await login(credentials);
       localStorage.setItem("token", response.token);
       setIsAuthenticated(true);
-      logDetails("Login successful", response);
+      logDetails("Login successful");
       navigate("/admin/tickets");
-    } catch (err) {
+    } catch (error) {
       setError("Login failed. Please check your credentials.");
-      logDetails("Login failed", err);
+      logDetails("Login failed", error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <h2>Login</h2>
       <div>
         <label>Username</label>

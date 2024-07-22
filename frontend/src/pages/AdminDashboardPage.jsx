@@ -11,7 +11,6 @@ const AdminDashboardPage = () => {
       try {
         const response = await getAllTickets();
         setTickets(response);
-        logDetails("Fetched all tickets", response);
       } catch (error) {
         logDetails("Failed to fetch tickets", error);
       }
@@ -20,8 +19,7 @@ const AdminDashboardPage = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Admin Dashboard</h2>
+    <div className="admin-dashboard">
       <TicketList tickets={tickets} />
     </div>
   );

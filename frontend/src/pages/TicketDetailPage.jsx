@@ -25,7 +25,7 @@ const TicketDetailPage = () => {
           comments: response.comments || "",
           priority: response.priority || "medium",
         });
-        logDetails("Fetched ticket details", response);
+        logDetails("Successfully fetched ticket details");
       } catch (error) {
         logDetails("Failed to fetch ticket", error);
       }
@@ -86,8 +86,8 @@ const TicketDetailPage = () => {
     ticket.response === "Ticket successfully resolved!";
 
   return (
-    <div>
-      <button onClick={() => navigate("/admin/tickets")}>
+    <div className="ticket-detail">
+      <button onClick={() => navigate("/admin/tickets")} className="back-button">
         Back to Dashboard
       </button>
       <h2>Ticket Details</h2>
@@ -104,7 +104,7 @@ const TicketDetailPage = () => {
         </div>
         <div>
           <label>
-            <strong>Status:</strong>
+            <strong>Status:</strong>{" "}
             {isClosed ? (
               <span>{form.status}</span>
             ) : (
@@ -119,7 +119,7 @@ const TicketDetailPage = () => {
         </div>
         <div>
           <label>
-            <strong>Priority:</strong>
+            <strong>Priority:</strong>{" "}
             {isClosed ? (
               <span>{form.priority}</span>
             ) : (
@@ -137,7 +137,7 @@ const TicketDetailPage = () => {
         </div>
         <div>
           <label>
-            <strong>Response:</strong>
+            <strong>Response:</strong>{" "}
             {isClosed ? (
               <span>{form.response}</span>
             ) : (
@@ -188,11 +188,15 @@ const TicketDetailPage = () => {
               : "N/A"}
           </p>
         </div>
-        <button type="submit" disabled={isClosed && !form.comments}>
+        <button type="submit" disabled={isClosed && !form.comments} className="update-button">
           Update Ticket
         </button>
       </form>
-      {isClosed && <button onClick={handleDelete}>Delete Ticket</button>}
+      {isClosed && (
+        <button className="delete-button" onClick={handleDelete}>
+          Delete Ticket
+        </button>
+      )}
     </div>
   );
 };

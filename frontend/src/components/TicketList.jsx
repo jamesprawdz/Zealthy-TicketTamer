@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import logDetails from '../utils/logUtil';
 
 const TicketList = ({ tickets }) => {
-  logDetails('Rendering TicketList', { tickets });
+  logDetails('Rendering TicketList');
 
   return (
-    <div>
-      <h3>All Tickets</h3>
-      <table>
+    <div className="ticket-list">
+      <h3 className="ticket-list-title">All Tickets</h3>
+      <table className="ticket-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -32,7 +32,7 @@ const TicketList = ({ tickets }) => {
               <td>{ticket.response}</td>
               <td>{ticket.comments}</td>
               <td>
-                <Link to={`/admin/tickets/${ticket.id}`}>View Details</Link>
+                <Link to={`/admin/tickets/${ticket.id}`} className="view-details-link">View Details</Link>
               </td>
             </tr>
           ))}

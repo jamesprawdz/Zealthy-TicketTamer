@@ -1,0 +1,334 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #f2f4e8;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand svg {
+    height: 40px;
+}
+
+/* Login form styles */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+.login-form p {
+    color: red;
+    text-align: center;
+}
+
+/* Add Ticket form styles */
+.add-ticket-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.add-ticket-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-ticket-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.add-ticket-form input,
+.add-ticket-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-ticket-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.add-ticket-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-ticket-form button:hover {
+    background-color: #0056b3;
+}
+
+.add-ticket-form p {
+    text-align: center;
+    color: red;
+}
+
+/* Admin Dashboard styles */
+.admin-dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.ticket-list {
+    width: 100%;
+}
+
+.ticket-list-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+
+.ticket-table th,
+.ticket-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.ticket-table th {
+    background-color: #f2f4e8;
+    font-weight: bold;
+}
+
+.view-details-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.view-details-link:hover {
+    text-decoration: underline;
+}
+
+/* Ticket Detail form styles */
+.ticket-detail {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.ticket-detail h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ticket-detail div {
+    margin-bottom: 15px;
+}
+
+
+.ticket-detail label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.ticket-detail label span {
+    font-weight: normal;
+}
+
+.ticket-detail input,
+.ticket-detail select,
+.ticket-detail textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ticket-detail textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.ticket-detail button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.ticket-detail button:hover {
+    background-color: #0056b3;
+}
+
+.ticket-detail .delete-button {
+    background-color: #FF0000;
+}
+
+.ticket-detail .delete-button:hover {
+    background-color: #cc0000;
+}
+
+.ticket-detail p {
+    text-align: center;
+    color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-center {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        margin-bottom: 10px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 10px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .login-form,
+    .add-ticket-form,
+    .admin-dashboard,
+    .ticket-detail {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .ticket-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .ticket-table th,
+    .ticket-table td {
+        padding: 8px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+}

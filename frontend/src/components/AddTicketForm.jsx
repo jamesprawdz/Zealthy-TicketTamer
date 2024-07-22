@@ -24,7 +24,7 @@ const AddTicketForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-ticket-form" onSubmit={handleSubmit}>
       <h2>Submit a Support Ticket</h2>
       <label>
         Name:
